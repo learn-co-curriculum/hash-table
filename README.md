@@ -1,13 +1,13 @@
 ## Hash Table
 
-### Objectives 
+### Objectives
 * Learn the components of a hash table.
 * Learn about collisions and how to resolve them.
-* Learn the role of a hash function and the attributes of a good hash function. 
+* Learn the role of a hash function and the attributes of a good hash function.
 
 ### Hash Tables
 
-![](http://timrahshad.com/wp-content/uploads/2016/11/reintroduce-415x400.png)
+![](https://s3.amazonaws.com/learn-verified/reintroduce-415x400.png)
 
 
 Now it's time to formally introduce you to the hash.  A hash table is where information related to a key is assigned to a specific index.  
@@ -40,20 +40,20 @@ So let's start with inserting some books.  We have the following books: *The Bib
 
 You will see that while the Dewey Decimal System assigns us one of a range of numbers, we adapt its formula to store each book at the lowest number possible for each section.  So based on that, The Bible is assigned 200, because it falls under religion.  Accordingly, we also assign Introduction to Physics number 500, War and Peace 800 and Alexander Hamilton 900.
 
-Because we assigned each of our books according to this formula, when we retrieve a book, we do not need to look through every index to find our books, instead we just look at the place of the book based on the Dewey Decimal System. 
+Because we assigned each of our books according to this formula, when we retrieve a book, we do not need to look through every index to find our books, instead we just look at the place of the book based on the Dewey Decimal System.
 
-![](http://i2.cdn.cnn.com/cnnnext/dam/assets/131126190621-geroge-peabody-library-horizontal-large-gallery.jpg)
+![](https://s3.amazonaws.com/learn-verified/geroge-peabody-library-horizontal-large-gallery.jpg)
 > A massive library
 
 So we use our formula to tell us both where to insert a book.
 
 And we also use our formula to know if a book exists in our collection.  If someone asks us if *Eloquent Javascript* is in our hash table, we simply visit our index at location 600, see that nothing is there, and can confidently reply that the book is not located there.  Because our formula tells us where to retrieve a book we are able to retrieve and insert an element in constant time.
 
-So with a hash table, we look at the data in our key, run it through our hash function to determine where to place the element and associated data.  Later, we also use the information in the key, run it through our hash function to tell us where to retrieve this data.  With this process we achieve our goal of constant time for inserting and retrieving elements irrespective of the number of elements in our collection. 
- 
+So with a hash table, we look at the data in our key, run it through our hash function to determine where to place the element and associated data.  Later, we also use the information in the key, run it through our hash function to tell us where to retrieve this data.  With this process we achieve our goal of constant time for inserting and retrieving elements irrespective of the number of elements in our collection.
+
 #### The Problem: Collision
 
-Our hash table currently looks like the following: 
+Our hash table currently looks like the following:
 
 | Index        |Book           |
 | ------------- |:-------------:|
@@ -89,9 +89,9 @@ Note that in the worse case scenario, all of our inserted elements collide and w
 
 ### Choosing a good hash function
 
-Going forward, we should choose a hash function that minimizes the chance of a collision occurring.  Some properties of a good hash function. 
+Going forward, we should choose a hash function that minimizes the chance of a collision occurring.  Some properties of a good hash function.
 
-1. Makes use of all information provided by a given key to maximize the number of possible hash values.  Note that the real Dewey Decimal System does a better job at this: different titles by different authors map to different values. 
+1. Makes use of all information provided by a given key to maximize the number of possible hash values.  Note that the real Dewey Decimal System does a better job at this: different titles by different authors map to different values.
 2. Maps similar keys to very different values - making collisions much less likely.
 4. Also hash function called frequently so should employ simple and quick introductions.  
 
@@ -99,7 +99,6 @@ Going forward, we should choose a hash function that minimizes the chance of a c
 
 In this function we learned about hash tables.  Hash tables place the value of an element into a hash function which outputs a hash value.  The hash value determines where to place the element.  Because a hash function produces the same hash value for a given element, it also gives us fast lookup time to retrieve an element.  
 
-When a hash function ouputs the same hash value for two different elements we have a collision.  We can resolve a collision by employing separate chaining where each hash value points to a linked list, and when there is a collision we attach the element to the linked list.  
+When a hash function outputs the same hash value for two different elements we have a collision.  We can resolve a collision by employing separate chaining where each hash value points to a linked list, and when there is a collision we attach the element to the linked list.  
 
 Because retrieving elements from a linked list is O(n), we try to choose a hash function that avoids collisions.  Because we must use our hash function to insert, delete, and retrieve elements we also choose a fast hash function.
-
