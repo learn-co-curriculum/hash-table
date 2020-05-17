@@ -1,4 +1,6 @@
 ---
-:page_id: 3435
-:course_id: 239
-:canvas_url: https://learning.flatironschool.com/courses/239/pages/hash-table
+:lessons:
+- :id: 3914
+  :course_id: 272
+  :canvas_url: https://learning.flatironschool.com/courses/272/pages/hash-table
+  :type: page
