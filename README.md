@@ -19,7 +19,7 @@ does it work under the hood?
 ## Hash Functions
 
 For a hash to work, we use a **hash function** to determine where in memory to
-store a information related to that key. Later, we use the same hash function to
+store information related to that key. Later, we use the same hash function to
 determine where to search for a given key.
 
 One way to think about how hashes relate to hash functions is thinking about how
@@ -29,7 +29,7 @@ author of a book, and the librarian tells us precisely where to find the book.
 ![library book example](https://s3-us-west-2.amazonaws.com/curriculum-content/algorithms/dewey-decimal-arrangement.jpg)
 
 In this analogy, our **key** is the title and author of the book, which we can
-use to determine the appropriate card catalogue id. The card catalogue id (which
+use to determine the appropriate card catalog id. The card catalog id (which
 comes from the Dewey Decimal System above — think of that as our **hash
 function**) tells us exactly where to find the book. If the book is there, we
 have our book and all of the information inside. If nothing is there, there is
@@ -100,7 +100,7 @@ What happens if we need to store another book, this time _Introduction to
 Biology_? Well, our adapted Dewey Decimal System tells us to store the key at
 precisely index 500. The only problem is that the slot is already filled. We
 have just encountered a **collision**. A collision is where our hash function
-outputs an index that already is assigned to another key in our hash table.
+outputs an index that is already assigned to another key in our hash table.
 
 To handle our collision, we apply a technique called _separate chaining_. With
 separate chaining, each index points to a linked list. So in our example above
@@ -121,7 +121,7 @@ technique, our hash table looks like the following:
 | 800   |                    [ "*War and Peace*" ]                     |
 | 900   |                  [ "*Alexander Hamilton*" ]                  |
 
-In the worse case scenario, all of our inserted elements collide, and we have to
+In the worst case scenario, all of our inserted elements collide, and we have to
 traverse a linked list of length `n` to retrieve an element, so we have **O(n)**
 runtime. However, on average collisions do not occur, so we achieve constant
 time for lookup, insertion and deletion _on average_.
@@ -137,16 +137,16 @@ the chance of a collision occurring. Some properties of a good hash function are
    values.
 2. Maps similar keys to very different values - making collisions much less likely.
 
-### Summary
+## Conclusion
 
-In this lesson we learned about **hash tables**. Hash tables use a **hash
+In this lesson, we learned about **hash tables**. Hash tables use a **hash
 function** to output a **hash value**. The hash value determines where to place
 the element in memory. Because a hash function produces the same hash value for
 a given element, it also gives us fast lookup time to retrieve an element.
 
-When a hash function outputs the same hash value for two different elements we
+When a hash function outputs the same hash value for two different elements, we
 have a collision. We can resolve a collision by employing separate chaining
-where each hash value points to a linked list, and when there is a collision we
+where each hash value points to a linked list, and when there is a collision, we
 attach the element to the linked list.
 
 Because retrieving elements from a linked list is O(n), programming languages
