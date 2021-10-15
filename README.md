@@ -13,7 +13,7 @@ in Ruby, as an `Object` in JavaScript, a `Dictionary` in Python, and so on.
 Just about every language has an implementation of this data structure!
 
 Hashes are used for storing key-value pairs. This allows for quick retrieval of
-data — the Big O for accessing a value in a hash is constant time: O(n). But how
+data — the Big O for accessing a value in a hash is constant time: O(1). But how
 does it work under the hood?
 
 ## Hash Functions
