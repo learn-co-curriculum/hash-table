@@ -9,8 +9,8 @@
 
 Now it's time to formally introduce you to the hash. When we talk about hashes
 in this lesson, we're referring to the general data structure known as a `Hash`
-in Ruby, as an `Object` in JavaScript, a `Dictionary` in Python, and so on.
-Just about every language has an implementation of this data structure!
+in Ruby, as an `Object` in JavaScript, a `Dictionary` in Python, and so on. Just
+about every language has an implementation of this data structure!
 
 Hashes are used for storing key-value pairs. This allows for quick retrieval of
 data — the Big O for accessing a value in a hash is constant time: O(1). But how
@@ -75,7 +75,7 @@ there.
 With a hash table, we look at the data in our key, run it through our hash
 function to determine where to place the element and associated data. Later, we
 also use the information in the key, run it through our hash function to tell us
-where to retrieve this data. With this process, we achieve our goal of **O(n)**
+where to retrieve this data. With this process, we achieve our goal of **O(1)**
 (constant time) for inserting and retrieving elements, irrespective of the
 number of elements in our collection.
 
@@ -129,13 +129,15 @@ time for lookup, insertion and deletion _on average_.
 ### Identifying Good Hash Functions
 
 Programming languages that implement hashes use a hash function that minimizes
-the chance of a collision occurring. Some properties of a good hash function are:
+the chance of a collision occurring. Some properties of a good hash function
+are:
 
 1. Makes use of all information provided by a given key to maximize the number
    of possible hash values. Note that the real Dewey Decimal System does a
    better job at this: different titles by different authors map to different
    values.
-2. Maps similar keys to very different values - making collisions much less likely.
+2. Maps similar keys to very different values - making collisions much less
+   likely.
 
 ## Conclusion
 
